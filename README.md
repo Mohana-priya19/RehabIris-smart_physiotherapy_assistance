@@ -36,3 +36,19 @@ RehabIris bridges this gap by delivering a real-time, AI-driven rehabilitation e
 [User / Webcam] ──> [TensorFlow.js (Pose Detection)] ──> [Biomechanical Vector Analysis] 
                                                                     │
 [UI Dashboard] <── [Firebase Firestore Data Hub] <── [Instant Feedback Engine]
+
+
+##System Workflow
+User Authentication: User logs in securely via Firebase Auth, loading their historical rehabilitation profile.
+
+Edge Video Capture: The application streams live video from the user's webcam (processed locally for absolute privacy).
+
+Keypoint Extraction: TensorFlow.js utilizes WebGL acceleration to map 33 anatomical landmarks frame-by-frame.
+
+Kinematic Evaluation: The system computes geometric angles between joints and flags deviations from standard therapeutic baselines.
+
+Reactive Feedback Loops: Instant UI/Audio prompts instruct the user to adjust their posture (e.g., "Straighten your back", "Lower your knee").
+
+Telemetry Logging: Performance metrics, accuracy scores, and repetition counts are synced to the Firestore Database.
+
+Insight & Report Generation: The data engine runs analytical summaries to generate recovery trends, rendering interactive charts and exportable PDFs.
