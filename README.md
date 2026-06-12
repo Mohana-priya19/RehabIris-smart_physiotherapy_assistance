@@ -25,3 +25,40 @@ RehabIris bridges this gap by delivering a real-time, AI-driven rehabilitation e
 ---
 
 ## 🏗️ Architecture & Data Flow
+
+[User / Webcam] ──> [TensorFlow.js (Pose Detection)] ──> [Biomechanical Vector Analysis]
+│
+[UI Dashboard]  <── [Firebase Firestore Data Hub]    <── [Instant Feedback Engine]
+
+
+### System Workflow
+1.  **User Authentication:** User logs in securely via Firebase Auth, loading their historical rehabilitation profile.
+2.  **Edge Video Capture:** The application streams live video from the user's webcam (processed locally for absolute privacy).
+3.  **Keypoint Extraction:** TensorFlow.js utilizes WebGL acceleration to map 33 anatomical landmarks frame-by-frame.
+4.  **Kinematic Evaluation:** The system computes geometric angles between joints and flags deviations from standard therapeutic baselines.
+5.  **Reactive Feedback loops:** Instant UI/Audio prompts instruct the user to adjust their posture (e.g., *"Straighten your back"*, *"Lower your knee"*).
+6.  **Telemetry Logging:** Performance metrics, accuracy scores, and repetition counts are synced to the Firestore Database.
+7.  **Insight & Report Generation:** The data engine runs analytical summaries to generate recovery trends, rendering interactive charts and exportable PDFs.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technologies Used |
+| :--- | :--- |
+| **Frontend Core** | React, TypeScript, Vite |
+| **AI & Computer Vision** | TensorFlow.js, MediaPipe Pose Detection, WebGL Acceleration |
+| **UI & Animation** | Tailwind CSS, Framer Motion, Lucide Icons |
+| **Backend & Database** | Firebase Auth, Firestore Cloud Database |
+| **Data Viz & Reporting** | Recharts, jsPDF, html2canvas, React Markdown |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+* Node.js (v18 or higher)
+* npm or yarn
+
+### Installation
+1
